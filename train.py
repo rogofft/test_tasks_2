@@ -16,7 +16,7 @@ with Gen(r'dataset.hdf5', gen_batch_size) as train_gen:
         print('Batch #', i)
         x, y = next(train_gen)
 
-        model.fit([x[:gen_batch_size], x[gen_batch_size:]], y, epochs=3,
+        model.fit([x[:gen_batch_size], x[gen_batch_size:]], y, epochs=5,
                   batch_size=1, callbacks=callbacks)
 
 model.save_weights(model_path)
